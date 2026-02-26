@@ -1,4 +1,4 @@
-/* 1. CONFIGURAÇÕES GERAIS E VARIÁVEIS */
+/* CONFIGURAÇÕES GERAIS E VARIÁVEIS */
 :root {
     --azul-escuro: #003366;
     --azul-claro: #00AEEF;
@@ -21,7 +21,7 @@ body {
     background-color: var(--cinza-fundo);
 }
 
-/* 2. NAVBAR */
+/* NAVBAR */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -47,7 +47,7 @@ body {
 
 .btn-login { background: var(--azul-claro); color: white !important; padding: 8px 20px; border-radius: 5px; }
 
-/* 3. SEÇÃO HOME (HERO) */
+/*  SEÇÃO HOME (HERO) */
 .hero {
     display: flex;
     flex-direction: column;
@@ -67,14 +67,14 @@ body {
 .hero h1 { font-size: 2.8rem; color: var(--azul-escuro); margin-bottom: 10px; }
 .hero p { font-size: 1.3rem; color: #333; margin-bottom: 20px; }
 
-/* 4. ESTILO DAS SEÇÕES DE CONTEÚDO (Ajustado para subir o conteúdo) */
+/*  ESTILO DAS SEÇÕES DE CONTEÚDO (Ajustado para subir o conteúdo) */
 .sessao-conteudo {
     padding: 60px 10%; /* Reduzido de 80px para 60px */
     min-height: 80vh;   /* Reduzido de 100vh para 80vh para evitar espaço sobrando no fim */
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center; /* Mudado de flex-start para center para equilibrar na tela */
+    justify-content: center; /* Center para equilibrar na tela */
     padding-top: 100px; 
     text-align: center;
     position: relative; 
@@ -86,7 +86,7 @@ body {
 .sobre-container h2 {
     font-size: 2.2rem; 
     color: var(--azul-escuro);
-    margin-bottom: 15px; /* Reduzido levemente */
+    margin-bottom: 15px; 
     font-weight: bold;
     text-align: center;
 }
@@ -98,10 +98,10 @@ body {
     max-width: 800px;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 25px; /* Reduzido levemente */
+    margin-bottom: 25px; 
 }
 
-/* 5. CONTAINER DA SEÇÃO SOBRE */
+/*  CONTAINER DA SEÇÃO SOBRE */
 .sobre-container {
     background-color: white; 
     border: 1px solid #e0e0e0;
@@ -112,7 +112,7 @@ body {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
 }
 
-/* 6. PILARES */
+/*  PILARES */
 .pilares-container {
     display: flex;
     justify-content: space-between;
@@ -133,19 +133,19 @@ body {
     background-color: rgba(0, 174, 239, 0.1);
 }
 
-/* 7. CORES DE FUNDO */
+/*  CORES DE FUNDO */
 #sobre { background-color: #ffffff; }
 #exames { background-color: #ffffff !important; }
 #unidades { background-color: #ffffff; }
 
-/* 8. EXAMES GRID */
+/*  EXAMES GRID */
 .exames-grid {
     display: flex;
     justify-content: space-between;
     gap: 40px;
     width: 100%;
     max-width: 1100px;
-    margin-top: 20px; /* Reduzido para aproximar do texto */
+    margin-top: 20px; 
 }
 
 .lista-exames {
@@ -171,18 +171,18 @@ body {
     font-weight: bold;
 }
 
-/* 9. CONTAINER DAS UNIDADES (Hover) */
+/*  CONTAINER DAS UNIDADES (Hover) */
 .unidades-grid {
     display: flex;
     justify-content: center;
     gap: 30px;
-    margin-top: 20px; /* Subimos a grid para ficar mais perto do título */
+    margin-top: 20px; 
     perspective: 1000px;
 }
 
 .card-cidade {
     width: 320px; 
-    height: 400px; /* Um pouco mais alta para comportar os tópicos com folga */
+    height: 400px; 
     position: relative;
     border-radius: 15px;
     overflow: hidden;
@@ -272,9 +272,7 @@ body {
     border-radius: 50%;
 }
 
-/* ==========================================================================
-   8 e 10. MODAL DE LOGIN (ESTILO FINAL CORRIGIDO)
-   ========================================================================== */
+/* MODAL DE LOGIN */
 .modal { 
     display: none; 
     position: fixed; 
@@ -283,15 +281,15 @@ body {
     top: 0; 
     width: 100%; 
     height: 100%; 
-    background: rgba(0,0,0,0.7); /* Fundo um pouco mais escuro para destaque */
+    background: rgba(0,0,0,0.7); 
 }
 
 .modal-content { 
     background: white; 
     margin: 10% auto; 
-    padding: 50px 40px; /* Mais espaço interno */
+    padding: 50px 40px; 
     width: 100%;
-    max-width: 500px; /* Janela mais larga e imponente */
+    max-width: 500px; 
     border-radius: 20px; 
     text-align: center; 
     position: relative; 
@@ -299,21 +297,21 @@ body {
     border: none;
 }
 
-/* O "X" de fechar corrigido no canto superior direito */
+/* O "X" de fechar*/
 .fechar-modal {
     position: absolute;
     top: 20px;
     right: 25px;
-    font-size: 30px; /* Maior para facilitar o clique */
+    font-size: 30px; 
     cursor: pointer;
-    color: var(--azul-escuro); /* Cor azul escuro */
+    color: var(--azul-escuro); 
     font-weight: bold;
     line-height: 1;
     transition: 0.3s;
 }
 
 .fechar-modal:hover {
-    color: #ff0000; /* Fica vermelho ao passar o mouse */
+    color: #ff0000; 
     transform: scale(1.2);
 }
 
@@ -329,7 +327,7 @@ body {
     width: 100%;
     padding: 15px;
     margin-bottom: 20px;
-    border: 2px solid var(--azul-escuro) !important; /* Força o contorno azul escuro */
+    border: 2px solid var(--azul-escuro) !important; 
     border-radius: 10px;
     font-size: 1.1rem;
     color: #333;
@@ -340,7 +338,7 @@ body {
 /* Botão de Entrar Reduzido e Centralizado */
 .btn-entrar {
     width: 150px; /* Definido um tamanho fixo menor */
-    display: block; /* Necessário para centralizar com margin auto */
+    display: block; 
     margin: 20px auto 0 auto; /* Centraliza horizontalmente e dá espaço em cima */
     background-color: var(--azul-claro) !important;
     color: white !important;
@@ -360,7 +358,7 @@ body {
     box-shadow: 0 6px 15px rgba(0, 174, 239, 0.3);
 }
 
-/* 11. RESPONSIVIDADE */
+/*  RESPONSIVIDADE */
 @media (max-width: 768px) {
     .navbar { padding: 0 20px; }
     .nav-links { display: none; flex-direction: column; position: absolute; top: 80px; left: 0; width: 100%; background: white; padding: 20px; box-shadow: 0 5px 10px rgba(0,0,0,0.1); }
@@ -371,9 +369,7 @@ body {
     .unidades-grid { flex-direction: column; align-items: center; }
 }
 
-/* ==========================================================================
-   12. PAINEL DO PACIENTE (ABAS E TABELAS)
-   ========================================================================== */
+/*  PAINEL DO PACIENTE (ABAS E TABELAS) */
 .painel-paciente {
     background: white;
     width: 95%;
@@ -382,7 +378,7 @@ body {
     padding: 30px;
     border-radius: 15px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-    text-align: left; /* Garante que o texto da tabela não fique centralizado */
+    text-align: left; 
 }
 
 .painel-header {
@@ -469,8 +465,7 @@ body {
     background: #ff4d4d;
     color: white;
 }
-/* Esta regra faz com que qualquer elemento com a classe 'hidden' 
-   suma completamente da tela e não ocupe espaço nenhum */
+
 .hidden {
     display: none !important;
 }
