@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BioVitta Laboratórios</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">BioVitta<span>.</span></div>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#sobre">Sobre</a></li>
+            <li><a href="#exames">Exames</a></li>
+            <li><a href="#unidades">Unidades</a></li>
+            <li><a href="javascript:void(0)" class="btn-login" onclick="abrirModal()">Área do Paciente</a></li>
+        </ul>
+        <div class="menu-icon" onclick="toggleMenu()">☰</div>
+    </nav>
+
+    <main id="conteudo-principal">
+        <section id="home" class="hero">
+            <div class="hero-text">
+                <h1>Cuidar da sua saúde é a nossa missão.</h1>
+                <p>Resultados precisos e rápidos para você e sua família.</p>
+            </div>
+        </section>
+
+        <section id="sobre" class="sessao-conteudo">
+          <div class="sobre-container">
+            <h2>Sobre a BioVitta</h2>
+            <p>O <strong>BioVitta Laboratórios</strong> é referência em diagnósticos de precisão, atuando com pioneirismo e excelência técnica. Nosso compromisso é oferecer resultados ágeis e seguros, auxiliando médicos e pacientes com tecnologia de última geração e um atendimento humanizado.</p>
+          
+            <div class="pilares-container">
+              <div class="pilar">
+                <h3>Missão</h3>
+                <p>Prover soluções diagnósticas com excelência, contribuindo para a preservação da vida e o bem-estar da sociedade.</p>
+              </div>
+              <div class="pilar">
+                <h3>Visão</h3>
+                <p>Ser reconhecido como o laboratório mais confiável e inovador da região, referência em qualidade e acolhimento.</p>
+              </div>
+              <div class="pilar">
+                <h3>Valores</h3>
+                <p>Ética, Precisão, Respeito à Vida, Inovação Tecnológica e Humanização no Atendimento.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="exames" class="sessao-conteudo">
+          <h2>Exames Disponíveis</h2>
+          <p>Realizamos uma ampla gama de diagnósticos com tecnologia de ponta e precisão garantida.</p>
+    
+          <div class="exames-grid">
+            <ul class="lista-exames">
+              <li>Hemograma Completo</li>
+              <li>Glicemia de Jejum</li>
+              <li>Colesterol Total e Frações</li>
+              <li>Triglicerídeos</li>
+              <li>TGO e TGP (Fígado)</li>
+            </ul>
+            <ul class="lista-exames">
+              <li>Creatinina (Rins)</li>
+              <li>TSH e T4 Livre (Tireoide)</li>
+              <li>Exame de Urina (EAS)</li>
+              <li>Exame de Fezes (Parasitológico)</li>
+              <li>Teste de Gravidez (Beta HCG)</li>
+            </ul>
+            <ul class="lista-exames">
+              <li>Sexagem Fetal</li>
+              <li>Teste de DNA (Paternidade)</li>
+              <li>Perfil Lipídico</li>
+              <li>Ácido Úrico</li>
+              <li>Vitamina D e B12</li>
+            </ul>
+          </div>
+        </section>
+
+        <section id="unidades" class="sessao-conteudo">
+          <h2>Nossas Unidades</h2>
+          <p>Passe o mouse sobre a cidade para ver nossos endereços.</p>
+
+          <div class="unidades-grid">
+            <div class="card-cidade cidade-curitiba">
+              <div class="card-frente">
+                <h3>Curitiba</h3>
+              </div>
+              <div class="card-info">
+                <h4>Unidades Curitiba</h4>
+                <ul>
+                    <li>Batel</li>
+                    <li>Centro</li>
+                    <li>Bigorrilho</li>
+                    <li>Portão</li>
+                    <li>Santa Felicidade</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="card-cidade cidade-sp">
+              <div class="card-frente">
+                <h3>São Paulo</h3>
+              </div>
+              <div class="card-info">
+                <h4>Unidades São Paulo</h4>
+                <ul>
+                    <li>Itaim Bibi</li>
+                    <li>Vila Olímpia</li>
+                    <li>Pinheiros</li>
+                    <li>Morumbi</li>
+                    <li>Moema</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="card-cidade cidade-rio">
+              <div class="card-frente">
+                <h3>Rio de Janeiro</h3>
+              </div>
+              <div class="card-info">
+                <h4>Unidades Rio</h4>
+                <ul>
+                    <li>Copacabana</li>
+                    <li>Ipanema</li>
+                    <li>Barra da Tijuca</li>
+                    <li>Leblon</li>
+                    <li>Botafogo</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+    </main>
+
+    <div id="loginModal" class="modal">
+      <div class="modal-content">
+        <span class="fechar-modal" onclick="fecharModal()">&times;</span>
+        
+        <h2>Acesse seus Resultados</h2>
+        
+        <input type="text" id="cpf" placeholder="CPF (000.000.000-00)">
+        <input type="password" id="senha" placeholder="Senha">
+        
+        <button class="btn-entrar" onclick="simularLogin()">Entrar</button>
+      </div>
+    </div>
+    <section id="resultados" class="sessao-conteudo hidden">
+      <div class="painel-paciente">
+        <header class="painel-header">
+            <h2>Bem-vindo, <span id="nomePaciente">João Silva</span></h2>
+            <div class="abas-navegacao">
+                <button class="aba-btn active" onclick="mudarAba('aba-exames')">Meus Exames</button>
+                <button class="aba-btn" onclick="mudarAba('aba-dados')">Dados Cadastrais</button>
+            </div>
+        </header>
+
+        <div id="aba-exames" class="conteudo-aba active">
+            <table class="tabela-clinica">
+                <thead>
+                    <tr>
+                        <th>Exame</th>
+                        <th>Data</th>
+                        <th>Status</th>
+                        <th>Ação</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Hemograma Completo</td>
+                        <td>10/05/2024</td>
+                        <td><span class="status pronto">Disponível</span></td>
+                        <td><button class="btn-tabela" onclick="verResultado('Hemograma')">Ver Resultado</button></td>
+                    </tr>
+                    <tr>
+                        <td>Glicemia em Jejum</td>
+                        <td>12/05/2024</td>
+                        <td><span class="status pronto">Disponível</span></td>
+                        <td><button class="btn-tabela" onclick="verResultado('Glicemia')">Ver Resultado</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div id="aba-dados" class="conteudo-aba">
+            <div class="cards-dados">
+                <div class="campo-dado">
+                    <label>Nome Completo:</label>
+                    <p>João da Silva Sauro</p>
+                </div>
+                <div class="campo-dado">
+                    <label>CPF:</label>
+                    <p>123.456.789-00</p>
+                </div>
+                <div class="acoes-dados">
+                    <button class="btn-editar">Editar Dados</button>
+                    <button class="btn-excluir">Excluir Conta</button>
+                </div>
+            </div>
+        </div>
+
+        <button class="btn-sair" onclick="logout()">Sair da Conta</button>
+      </div>
+    </section>
+
+    <script src="../js/script.js"></script>
+</body>
+</html>

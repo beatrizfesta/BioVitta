@@ -1,0 +1,476 @@
+/* 1. CONFIGURAÇÕES GERAIS E VARIÁVEIS */
+:root {
+    --azul-escuro: #003366;
+    --azul-claro: #00AEEF;
+    --cinza-fundo: #f4f7f6;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px; 
+}
+
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+}
+
+body {
+    background-color: var(--cinza-fundo);
+}
+
+/* 2. NAVBAR */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5%;
+    height: 80px;
+    background: white;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; 
+}
+
+.logo { font-size: 24px; font-weight: bold; color: var(--azul-escuro); }
+.logo span { color: var(--azul-claro); }
+
+.nav-links { display: flex; list-style: none; }
+.nav-links li { margin-left: 20px; }
+.nav-links a { text-decoration: none; color: var(--azul-escuro); font-weight: 500; transition: 0.3s; }
+.nav-links a:hover { color: var(--azul-claro); }
+
+.btn-login { background: var(--azul-claro); color: white !important; padding: 8px 20px; border-radius: 5px; }
+
+/* 3. SEÇÃO HOME (HERO) */
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    min-height: 100vh; 
+    background-image: linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)), url('../images/fundo.avif');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    padding: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.hero h1 { font-size: 2.8rem; color: var(--azul-escuro); margin-bottom: 10px; }
+.hero p { font-size: 1.3rem; color: #333; margin-bottom: 20px; }
+
+/* 4. ESTILO DAS SEÇÕES DE CONTEÚDO (Ajustado para subir o conteúdo) */
+.sessao-conteudo {
+    padding: 60px 10%; /* Reduzido de 80px para 60px */
+    min-height: 80vh;   /* Reduzido de 100vh para 80vh para evitar espaço sobrando no fim */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* Mudado de flex-start para center para equilibrar na tela */
+    padding-top: 100px; 
+    text-align: center;
+    position: relative; 
+    z-index: 5; 
+    width: 100%;
+}
+
+.sessao-conteudo h2, 
+.sobre-container h2 {
+    font-size: 2.2rem; 
+    color: var(--azul-escuro);
+    margin-bottom: 15px; /* Reduzido levemente */
+    font-weight: bold;
+    text-align: center;
+}
+
+.sessao-conteudo p {
+    font-size: 1.1rem !important;
+    color: #444 !important;
+    line-height: 1.6 !important;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 25px; /* Reduzido levemente */
+}
+
+/* 5. CONTAINER DA SEÇÃO SOBRE */
+.sobre-container {
+    background-color: white; 
+    border: 1px solid #e0e0e0;
+    padding: 40px;
+    border-radius: 15px;
+    max-width: 1000px;
+    width: 90%;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+/* 6. PILARES */
+.pilares-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.pilar {
+    flex: 1;
+    padding: 20px;
+    background-color: rgba(0, 174, 239, 0.05); 
+    border-radius: 10px;
+    transition: transform 0.3s;
+}
+
+.pilar:hover {
+    transform: translateY(-5px);
+    background-color: rgba(0, 174, 239, 0.1);
+}
+
+/* 7. CORES DE FUNDO */
+#sobre { background-color: #ffffff; }
+#exames { background-color: #ffffff !important; }
+#unidades { background-color: #ffffff; }
+
+/* 8. EXAMES GRID */
+.exames-grid {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    width: 100%;
+    max-width: 1100px;
+    margin-top: 20px; /* Reduzido para aproximar do texto */
+}
+
+.lista-exames {
+    flex: 1;
+    list-style: none;
+    text-align: left;
+}
+
+.lista-exames li {
+    font-size: 1.1rem;
+    color: #444;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(0, 51, 102, 0.1);
+    position: relative;
+    padding-left: 25px;
+}
+
+.lista-exames li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--azul-claro);
+    font-weight: bold;
+}
+
+/* 9. CONTAINER DAS UNIDADES (Hover) */
+.unidades-grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 20px; /* Subimos a grid para ficar mais perto do título */
+    perspective: 1000px;
+}
+
+.card-cidade {
+    width: 320px; 
+    height: 400px; /* Um pouco mais alta para comportar os tópicos com folga */
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    background-color: white;
+    cursor: pointer;
+}
+
+.card-frente {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.5s;
+}
+
+/* Imagens de fundo */
+.cidade-curitiba .card-frente { background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('../images/curitiba.jpg'); }
+.cidade-sp .card-frente { background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('../images/sp.jpg'); }
+.cidade-rio .card-frente { background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('../images/rio.jpg'); }
+
+.card-frente h3 {
+    color: white;
+    font-size: 2.2rem;
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+}
+
+/* Painel de Bairros */
+.card-info {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: white;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transform: translateY(100%);
+    transition: 0.4s ease-in-out;
+    z-index: 2;
+}
+
+.card-cidade:hover .card-info {
+    transform: translateY(0);
+}
+
+.card-info h4 {
+    color: var(--azul-escuro); 
+    font-size: 1.6rem;
+    margin-bottom: 20px;
+    border-bottom: 2px solid var(--azul-escuro);
+    padding-bottom: 10px;
+    width: 100%;
+    text-align: center;
+}
+
+.card-info ul {
+    list-style: none;
+    padding: 0;
+    width: 100%;
+}
+
+.card-info li {
+    color: #444;
+    font-size: 1.1rem;
+    margin: 12px 0;
+    padding-left: 25px;
+    position: relative;
+    text-align: left;
+    display: flex;
+    align-items: center;
+}
+
+/* Tópicos: Bolinhas Azul Escuro */
+.card-info li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 10px;
+    height: 10px;
+    background-color: var(--azul-escuro);
+    border-radius: 50%;
+}
+
+/* ==========================================================================
+   8 e 10. MODAL DE LOGIN (ESTILO FINAL CORRIGIDO)
+   ========================================================================== */
+.modal { 
+    display: none; 
+    position: fixed; 
+    z-index: 2000; 
+    left: 0; 
+    top: 0; 
+    width: 100%; 
+    height: 100%; 
+    background: rgba(0,0,0,0.7); /* Fundo um pouco mais escuro para destaque */
+}
+
+.modal-content { 
+    background: white; 
+    margin: 10% auto; 
+    padding: 50px 40px; /* Mais espaço interno */
+    width: 100%;
+    max-width: 500px; /* Janela mais larga e imponente */
+    border-radius: 20px; 
+    text-align: center; 
+    position: relative; 
+    box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+    border: none;
+}
+
+/* O "X" de fechar corrigido no canto superior direito */
+.fechar-modal {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    font-size: 30px; /* Maior para facilitar o clique */
+    cursor: pointer;
+    color: var(--azul-escuro); /* Cor azul escuro */
+    font-weight: bold;
+    line-height: 1;
+    transition: 0.3s;
+}
+
+.fechar-modal:hover {
+    color: #ff0000; /* Fica vermelho ao passar o mouse */
+    transform: scale(1.2);
+}
+
+.modal-content h2 {
+    color: var(--azul-escuro);
+    margin-bottom: 30px;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+/* Campos de entrada com contorno azul escuro */
+.modal-content input {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 2px solid var(--azul-escuro) !important; /* Força o contorno azul escuro */
+    border-radius: 10px;
+    font-size: 1.1rem;
+    color: #333;
+    outline: none;
+    display: block; /* Garante que fiquem um embaixo do outro */
+}
+
+/* Botão de Entrar Reduzido e Centralizado */
+.btn-entrar {
+    width: 150px; /* Definido um tamanho fixo menor */
+    display: block; /* Necessário para centralizar com margin auto */
+    margin: 20px auto 0 auto; /* Centraliza horizontalmente e dá espaço em cima */
+    background-color: var(--azul-claro) !important;
+    color: white !important;
+    padding: 10px 20px; /* Reduzi o preenchimento interno */
+    border: none !important;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 4px 10px rgba(0, 174, 239, 0.2);
+}
+
+.btn-entrar:hover {
+    background-color: #008cc0 !important;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 174, 239, 0.3);
+}
+
+/* 11. RESPONSIVIDADE */
+@media (max-width: 768px) {
+    .navbar { padding: 0 20px; }
+    .nav-links { display: none; flex-direction: column; position: absolute; top: 80px; left: 0; width: 100%; background: white; padding: 20px; box-shadow: 0 5px 10px rgba(0,0,0,0.1); }
+    .nav-links.active { display: flex; }
+    .menu-icon { display: block; cursor: pointer; font-size: 1.5rem; }
+    .pilares-container { flex-direction: column; }
+    .exames-grid { flex-direction: column; gap: 0; }
+    .unidades-grid { flex-direction: column; align-items: center; }
+}
+
+/* ==========================================================================
+   12. PAINEL DO PACIENTE (ABAS E TABELAS)
+   ========================================================================== */
+.painel-paciente {
+    background: white;
+    width: 95%;
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    text-align: left; /* Garante que o texto da tabela não fique centralizado */
+}
+
+.painel-header {
+    border-bottom: 2px solid #eee;
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.abas-navegacao {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.aba-btn {
+    padding: 10px 25px;
+    border: none;
+    background: #f0f0f0;
+    cursor: pointer;
+    border-radius: 8px 8px 0 0;
+    font-weight: bold;
+    color: #666;
+    transition: 0.3s;
+}
+
+.aba-btn.active {
+    background: var(--azul-escuro) !important;
+    color: white !important;
+}
+
+.conteudo-aba { display: none; padding: 20px 0; }
+.conteudo-aba.active { display: block; }
+
+.tabela-clinica {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tabela-clinica th {
+    background: #f8f9fa;
+    padding: 15px;
+    color: var(--azul-escuro);
+    border-bottom: 2px solid #eee;
+}
+
+.tabela-clinica td {
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.status.pronto {
+    background: #e7f7ed;
+    color: #28a745;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: bold;
+}
+
+.btn-tabela {
+    background: var(--azul-claro);
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.btn-sair {
+    margin-top: 30px;
+    background: white;
+    border: 1px solid #ff4d4d;
+    color: #ff4d4d;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-sair:hover {
+    background: #ff4d4d;
+    color: white;
+}
+/* Esta regra faz com que qualquer elemento com a classe 'hidden' 
+   suma completamente da tela e não ocupe espaço nenhum */
+.hidden {
+    display: none !important;
+}
